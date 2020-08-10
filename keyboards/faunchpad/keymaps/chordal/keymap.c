@@ -9,49 +9,6 @@
  *  '---------------------------'
  */
 
-/*
-
-# Chordal Keymap for Faunchpad
-
-This is a fairly simply keymap that (ab)uses QMK's layer feature to implement "modal chords" (hence "Chordal".)
-
-The Faunchpad starts out in a default mode, which has no functionality except as a "menu" to other modes:
-
-  - FP01 selects NUMPAD mode.
-  - FP02 selects MEDIA mode.
-  - FP03 selects USERMACROS mode.
-
-Once you select a mode, the macropad stays in that mode until you return to BASE (menu) mode with FP14.
-Returing to BASE can also be done by pressing EVERY key at once.
-Pressing FP04 + FP11 at any time will type out the name of the current mode.
-
-## Numpad mode
-
-The numpad mode emulates a full numpad, using the keys FP01-FP03 and FP11-FP13 to represent the 10 digits.
-Because it uses "true numpad" keys, numbers are only emitted when NUMLOCK is enabled. The FP04 key toggles NUMLOCK.
-
-## Media mode
-
-The media mode has basic playback and volume control keys.
-
-## Usermacros mode
-
-The USERMACROS mode is used to interface with a userland macro system like Autohotkey.
-
-When a button or chord is pressed, the macropad sends an F13 character and another key which corresponds to the buttons pressed.
-The macro program can intercept these key combinations and trigger actions based on them.
-Between single keys and a few simple chords, 17 macros can be sent. You could easily add more!
-
-For example, pressing FP1 will send F13+1. You can intercept this in Autohotkey:
-
-F13 & 1::Send, Macro detected!
-
-An example Autohotkey script that captures all the USERMACRO keys is available in the `keyboards/faunchpad` directory.
-
-(Note, with Autohotkey, this workflow prevents the F13 key from working for any other use-case.
-Normally, this is no problem, but if you use F13, you'll have to pick a different prefix key.)
-*/
-
 // QMK Layer Numbers
 #define BASE 0
 #define NUMPAD 1

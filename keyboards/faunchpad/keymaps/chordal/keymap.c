@@ -19,7 +19,7 @@ The Faunchpad starts out in a default mode, which has no functionality except as
 
   - FP01 selects NUMPAD mode.
   - FP02 selects MEDIA mode.
-  - FP03 selects MACROS mode.
+  - FP03 selects USERMACROS mode.
 
 Once you select a mode, the macropad stays in that mode until you return to BASE (menu) mode with FP14.
 Returing to BASE can also be done by pressing EVERY key at once.
@@ -34,11 +34,22 @@ Because it uses "true numpad" keys, numbers are only emitted when NUMLOCK is ena
 
 The media mode has basic playback and volume control keys.
 
-## (TODO) Macros mode
+## Usermacros mode
 
-This mode will be user to interface with a "userspace" macro tool like Autohotkey. Ideally it'll work by sending some
-key combinations that are otherwise unused, but can be captured with any macro tool and acted on.
+The USERMACROS mode is used to interface with a userland macro system like Autohotkey.
 
+When a button or chord is pressed, the macropad sends an F13 character and another key which corresponds to the buttons pressed.
+The macro program can intercept these key combinations and trigger actions based on them.
+Between single keys and a few simple chords, 17 macros can be sent. You could easily add more!
+
+For example, pressing FP1 will send F13+1. You can intercept this in Autohotkey:
+
+F13 & 1::Send, Macro detected!
+
+An example Autohotkey script that captures all the USERMACRO keys is available in the `keyboards/faunchpad` directory.
+
+(Note, with Autohotkey, this workflow prevents the F13 key from working for any other use-case.
+Normally, this is no problem, but if you use F13, you'll have to pick a different prefix key.)
 */
 
 // QMK Layer Numbers
@@ -68,7 +79,7 @@ uint32_t processQwerty(bool lookup) {
       P(FP04,         SEND(KC_NUMLOCK));
 
       return 0;
-    } 
+    }
     
     if (layer_state_is(MEDIA)) {
       P( FP11 | FP04, SEND_STRING("media"));
@@ -85,9 +96,27 @@ uint32_t processQwerty(bool lookup) {
     }
 
     if (layer_state_is(USERMACROS)) {
-      P( FP11 | FP04, SEND_STRING("macros"));
+      P( FP11 | FP04, SEND_STRING("usermacros"));
 
-      // TODO
+      P(FP01, SEND(KC_F13); SEND(KC_1));
+      P(FP02, SEND(KC_F13); SEND(KC_2));
+      P(FP03, SEND(KC_F13); SEND(KC_3));
+      P(FP04, SEND(KC_F13); SEND(KC_4));
+      P(FP11, SEND(KC_F13); SEND(KC_5));
+      P(FP12, SEND(KC_F13); SEND(KC_6));
+      P(FP13, SEND(KC_F13); SEND(KC_7));
+
+      P(FP01 | FP11, SEND(KC_F13); SEND(KC_Q));
+      P(FP02 | FP12, SEND(KC_F13); SEND(KC_W));
+      P(FP03 | FP13, SEND(KC_F13); SEND(KC_E));
+      P(FP04 | FP14, SEND(KC_F13); SEND(KC_R));
+
+      P(FP01 | FP02, SEND(KC_F13); SEND(KC_A));
+      P(FP02 | FP03, SEND(KC_F13); SEND(KC_S));
+      P(FP03 | FP04, SEND(KC_F13); SEND(KC_D));
+      P(FP11 | FP12, SEND(KC_F13); SEND(KC_Z));
+      P(FP12 | FP13, SEND(KC_F13); SEND(KC_X));
+      P(FP13 | FP14, SEND(KC_F13); SEND(KC_C));
 
       return 0;
     }

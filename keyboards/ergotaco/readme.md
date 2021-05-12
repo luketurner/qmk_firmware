@@ -4,7 +4,7 @@
 
 It's a Taco with a side of HASL. A 12 key fiesta of a board.
 
-Keyboard Maintainer: [Jeremy Bernhardt](https://github.com/germ)  
+Keyboard Maintainer: [Jane Bernhardt](https://github.com/germ)  
 Hardware Supported: ErgoTaco  
 Hardware Availability: [gboards.ca](http://gboards.ca)  
 
@@ -21,4 +21,4 @@ To just test if your build system is sane, try compiling the default keymap usin
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
-## Have an idea? [Reach out to me!](mailto:bernhardtjeremy@gmail.com)
+## Have an idea? [Reach out to me!](mailto:jane@gboards.ca)

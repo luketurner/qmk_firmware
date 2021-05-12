@@ -16,7 +16,7 @@
 #define MOVE	(LSU | LFT | LP | LH)	
 #define SYMB	(RD  | RZ)	
 #define NUMA    (LW  | LR)	
-#define NUMB    (RR  | RB)	
+#define NUMB    (RB  | RG)
 
 // QMK Layer Numbers
  #define BASE 0

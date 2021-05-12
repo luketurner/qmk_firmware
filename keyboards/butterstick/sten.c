@@ -62,7 +62,7 @@ bool send_steno_chord_user(steno_mode_t mode, uint8_t chord[6]) {
 #endif
 
 	// Toggle Serial/QWERTY steno
-	if (cChord == (PWR | FN | ST1 | ST2)) {
+	if (cChord == (LSU | LSD | ST1 | ST2)) {
 #ifndef NO_DEBUG
 		uprintf("Fallback Toggle\n");
 #endif
@@ -72,7 +72,7 @@ bool send_steno_chord_user(steno_mode_t mode, uint8_t chord[6]) {
 	}
 
 	// handle command mode
-	if (cChord == (PWR | FN | RD | RZ)) {
+	if (cChord == (LSU | LSD | RD | RZ)) {
 #ifndef NO_DEBUG
 		uprintf("COMMAND Toggle\n");
 #endif

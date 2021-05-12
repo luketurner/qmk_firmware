@@ -16,7 +16,7 @@ This board is more than a novelty, it's an ergonomic wonder!
 
 [Product info on gboards.ca](https://www.gboards.ca/product/ginni/)
 
-* Keyboard Maintainer: [Jeremy Bernhardt](https://github.com/germ)  
+* Keyboard Maintainer: [Jane Bernhardt](https://github.com/germ)  
 * Hardware Supported: Ginny (Kit, Partial, Ready)   
 * Hardware Availability: [gboards.ca](http://gboards.ca)  
 
@@ -41,4 +41,4 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
-## [Reach out to me!](mailto:bernhardtjeremy@gmail.com)
+## [Reach out to me!](mailto:jane@gboards.ca)
